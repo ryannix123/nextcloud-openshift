@@ -18,7 +18,7 @@ parameters:
   value: docker.io/nextcloud
 - name: NEXTCLOUD_IMAGE_TAG
   description: Tag of the Nextcloud Docker Image to deploy
-  value: 12-fpm
+  value: 20-fpm
 - name: NGINX_DOCKERFILE_REPO
   description: Nginx Dockerfile source repository
   value: https://github.com/tobru/nextcloud-openshift.git
@@ -275,7 +275,7 @@ objects:
       name: nextcloud
       weight: 100
     wildcardPolicy: None
-- apiVersion: batch/v2alpha1
+- apiVersion: batch/v1beta1
   kind: CronJob
   metadata:
     name: nextcloud-cron
@@ -292,6 +292,8 @@ objects:
               - -f
               - /var/www/html/cron.php
               env:
+              - name: NEXTCLOUD_UPDATE
+                value: "1"
               - name: NC_dbhost
                 value: mariadb
               - name: NC_dbuser
