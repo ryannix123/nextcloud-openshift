@@ -18,7 +18,7 @@ parameters:
   value: docker.io/nextcloud
 - name: NEXTCLOUD_IMAGE_TAG
   description: Tag of the Nextcloud Docker Image to deploy
-  value: 20-fpm
+  value: fpm-alpine
 - name: NGINX_DOCKERFILE_REPO
   description: Nginx Dockerfile source repository
   value: https://github.com/ryannix123/nextcloud-openshift.git
