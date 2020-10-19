@@ -31,10 +31,10 @@ objects:
   metadata:
     name: nextcloud-data
   mountOptions:
-  - dir_mode=0770
-  - file_mode=0770
-  - uid=1000
-  - gid=1000
+    - dir_mode=0770
+    - file_mode=0770
+    - uid=1000310000
+    - gid=1000310000
   spec:
     accessModes:
     - ReadWriteMany
