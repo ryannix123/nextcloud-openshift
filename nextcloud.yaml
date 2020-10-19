@@ -33,8 +33,8 @@ objects:
   mountOptions:
     - dir_mode=0770
     - file_mode=0770
-    - uid=1000
-    - gid=1000
+    - uid=www-data
+    - gid=www-data
   spec:
     accessModes:
     - ReadWriteMany
